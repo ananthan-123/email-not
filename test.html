@@ -1,0 +1,37 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  var baseUrl = "http://koomz-pch.tk/";
+  function sendMail() {
+    var name = document.getElementById("reminder__form--name").value;
+    var date = document.getElementById("reminder__form--date").value;
+    var email = document.getElementById("reminder__form--email").value;
+
+    var img_link = document
+      .getElementsByClassName("primary-image")[0]
+      .getAttribute("src");
+    var link = window.location.href;
+
+    $.ajax({
+      type: "POST",
+      url: baseUrl + "storedata/",
+      data: {
+        name: name,
+        mail: email,
+        date: date,
+        img_link: img_link,
+        link: link,
+      },
+      success: function (data) {
+        if (data.hasOwnProperty("error")) {
+          alert(data["error"]);
+        } else {
+          alert(data["res"]);
+        }
+      },
+      error: function (data) {
+        console.log("Error!");
+      },
+    });
+  }
+</script>

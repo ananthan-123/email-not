@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .main {
+      margin: auto;
+      margin-top: 100px;
+    }
+    img {
+      height: 200px;
+    }
+    .text {
+      font-size: 30px;
+      color: blue;
+      margin: 10px;
+    }
+    .text2 {
+      font-size: 20px;
+      color: black;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <img src="{% static 'img/done.png' %}" alt="" />
+      <div class="text">Remainder confirmed</div>
+      <div class="text2">You will recieve a mail on the specidied date.</div>
+    </div>
+  </body>
+</html>
